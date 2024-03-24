@@ -8,6 +8,9 @@ class Client(models.Model):
     adress = models.TextField()
     registry_date = models.DateField(auto_now=True)
 
+    def __str__(self):
+        return str(self.client_name)
+
 
 class Product(models.Model):
     product_name = models.CharField(max_length=100)

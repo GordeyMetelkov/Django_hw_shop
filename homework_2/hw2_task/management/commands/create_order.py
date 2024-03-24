@@ -16,17 +16,21 @@ class Command(BaseCommand):
             )
             order.save()
             price = 0
+            prod_set = set()
             for _ in range(3):
                 flag = True
                 while flag:
                     product = choice(products)
-                    if product.product_count == 0:
+                    if product in prod_set:
+                        flag = True
+                    elif product.product_count == 0:
                         flag = True
                     else:
                         order.products.add(product)
                         price += product.price
                         product.product_count -= 1
                         product.save()
+                        prod_set.add(product)
                         flag = False
             order.total_price = price
             order.save()

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказы</title>
+</head>
+<body>
+    <h1>Это страница со всеми заказами клиента {{ client }} </h1>
+    <ul> Список всех заказов {% block period %}{% endblock %}:
+            {% for order in orders %}
+                <li>Номер заказа - #{{ order.pk }}<br>
+                    <ol> Товары:<br>
+                        {% for product in order.products.all %}
+                            <li>{{ product.product_name }}</li>
+                        {% endfor %}
+                    </ol>
+                    Дата заказа: {{ order.order_registry_date }}<br>
+                    Сумма: {{ order.total_price }}
+                </li>
+            {% endfor %}
+    </ul>
+</body>
+</html>
