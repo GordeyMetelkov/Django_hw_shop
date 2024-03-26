@@ -10,6 +10,7 @@
     <p>{{ product.price }}</p>
     <p>{{ product.product_count }}</p>
     <p>{{ product.additions_date }}</p>
-    <p>{{ product.image }}</p>
+    <p>{{ product.image.url }}</p>
+    <img src="{{ product.image.url }}">
 </body>
 </html>

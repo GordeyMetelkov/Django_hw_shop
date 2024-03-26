@@ -41,6 +41,8 @@ def edit_product(request, product_id):
             product.price = data['price']
             product.product_count = data['product_count']
             product.image = data2['image']
+            fs = FileSystemStorage()
+            fs.save(product.image.name, product.image)
             product.save()
             return redirect('get_product', product_id)
     else:
