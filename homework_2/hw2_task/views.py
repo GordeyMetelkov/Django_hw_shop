@@ -1,6 +1,6 @@
+
 from django.core.files.storage import FileSystemStorage
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 import datetime
 
 from .forms import EditProductForm, AddImageForm
@@ -56,4 +56,4 @@ def edit_product(request, product_id):
     )
 
 def index(request):
-    return render(request, 'hw2_task/index.html')
+    return HttpResponse('Hello, World')
