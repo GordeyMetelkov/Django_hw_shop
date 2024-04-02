@@ -55,4 +55,4 @@ def edit_product(request, product_id):
     )
 
 def index(request):
-    return HttpResponse('hello, world')
+    return HttpResponse('hello, world', content_type='text/plain')
