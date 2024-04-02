@@ -54,3 +54,5 @@ def edit_product(request, product_id):
         {'form': form, 'form2': form2}
     )
 
+def index(request):
+    return HttpResponse('hello, world')
