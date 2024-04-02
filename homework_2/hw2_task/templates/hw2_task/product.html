@@ -10,7 +10,8 @@
     <p>{{ product.price }}</p>
     <p>{{ product.product_count }}</p>
     <p>{{ product.additions_date }}</p>
-    <p>{{ product.image.url }}</p>
-    <img src="{{ product.image.url }}">
+    {% if product.image %}
+        <img src="{{ product.image.url }}">
+    {% endif %}
 </body>
 </html>
